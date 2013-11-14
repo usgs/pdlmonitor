@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set("UTC");
 class Monitor {
 	/** Indicates no problems. */
 	public static $EXIT_SUCCESS = 0;
