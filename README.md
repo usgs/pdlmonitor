@@ -1,10 +1,10 @@
 pdlmonitor
-=====
+==========
 
 pdlmonitor provides a tool to check the status of a Product Distribution Layer (PDL) installation.
 
 INSTALLATION/CONFIGURATION
-==========================
+--------------------------
 
 This code depends on PHP 5 or higher.
 
@@ -16,7 +16,7 @@ and assumes that your PDL data directory is underneath the directory where the i
 if your setup differs from this.
 
 USAGE
-============
+-----
 After configuration, at the command line, run:
 
 <pre>
