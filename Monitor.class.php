@@ -337,7 +337,7 @@ class Monitor {
 		if ($memory_usage != null) {
 			if ($heartbeat != null && isset($heartbeat['heartbeat'])) {
 
-				$memory = $heartbeat['heartbeat']['totalCommitted'];
+				$memory = $heartbeat['heartbeat']['totalUsed'];
 
 				$this->checkMemoryUsage($memory, $memory_usage['warning'],
 						$memory_usage['critical']);
@@ -392,7 +392,7 @@ class Monitor {
 		$committed = intval($memory['message']); 
 
 		if ($committed > $critical) {
-			$message = 'Total committed memory [' . $committed . ' bytes] ' .
+			$message = 'Total used memory [' . $committed . ' bytes] ' .
 					'exceeds critical threshold [' . $critical . ' bytes].';
 
 			$this->addStatus(array(
@@ -401,7 +401,7 @@ class Monitor {
 				'updated' => time()
 			));
 		} else if ($committed > $warning) {
-			$message = 'Total committed memory [' . $committed . ' bytes] ' .
+			$message = 'Total used memory [' . $committed . ' bytes] ' .
 					'exceeds warning threshold [' . $warning . ' bytes].';
 
 			$this->addStatus(array(
@@ -410,7 +410,7 @@ class Monitor {
 				'updated' => time()
 			));
 		} else {
-			$message = 'Total committed memory [' . $committed . ' bytes] okay.';
+			$message = 'Total used memory [' . $committed . ' bytes] okay.';
 
 			$this->addStatus(array(
 				'message' => $message,
